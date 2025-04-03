@@ -36,16 +36,24 @@ new #[Layout('components.layouts.auth')] class extends Component {
 }; ?>
 
 <div class="flex flex-col gap-6">
-    <x-auth-header :title="__('Create an account')" :description="__('Enter your details below to create your account')" />
+    <x-auth-header :title="__('Crea Tu Cuenta')" :description="__('Enter your details below to create your account')" />
 
     <!-- Session Status -->
     <x-auth-session-status class="text-center" :status="session('status')" />
-
+    <style>
+        body{
+            background-image: url('{{ asset('') }}');
+                background-size: cover; /* Ajusta la imagen al tamaño completo */
+                background-position: center; /* Centra la imagen */
+                background-repeat: no-repeat; /* Evita repetición de la imagen */
+                min-height: 100vh;
+        }
+    </style>
     <form wire:submit="register" class="flex flex-col gap-6">
         <!-- Name -->
         <flux:input
             wire:model="name"
-            :label="__('Name')"
+            :label="__('Nombre')"
             type="text"
             required
             autofocus
@@ -56,7 +64,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
         <!-- Email Address -->
         <flux:input
             wire:model="email"
-            :label="__('Email address')"
+            :label="__('Correo Electronico')"
             type="email"
             required
             autocomplete="email"
@@ -66,7 +74,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
         <!-- Password -->
         <flux:input
             wire:model="password"
-            :label="__('Password')"
+            :label="__('Contraseña')"
             type="password"
             required
             autocomplete="new-password"
@@ -76,7 +84,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
         <!-- Confirm Password -->
         <flux:input
             wire:model="password_confirmation"
-            :label="__('Confirm password')"
+            :label="__('Confirmar contraseña')"
             type="password"
             required
             autocomplete="new-password"
@@ -85,7 +93,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
 
         <div class="flex items-center justify-end">
             <flux:button type="submit" variant="primary" class="w-full">
-                {{ __('Create account') }}
+                {{ __('Crear Cuenta') }}
             </flux:button>
         </div>
     </form>
@@ -93,5 +101,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
     <div class="space-x-1 rtl:space-x-reverse text-center text-sm text-zinc-600 dark:text-zinc-400">
         {{ __('Already have an account?') }}
         <flux:link :href="route('login')" wire:navigate>{{ __('Log in') }}</flux:link>
+        <flux:link :href="route('home')" wire:navigate>{{ __('Inicio') }}</flux:link>
+
     </div>
 </div>

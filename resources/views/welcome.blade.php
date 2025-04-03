@@ -8,7 +8,13 @@
         @livewireStyles
         <!-- Agregar estilos CSS (opcional) -->
         <style>
+            
             body {
+                background-image: url('{{ asset('https://artesaniasdecolombia.com.co/Documentos/Glosario/14647_mimbre-1.jpg') }}');
+                background-size: cover; /* Ajusta la imagen al tamaño completo */
+                background-position: center; /* Centra la imagen */
+                background-repeat: no-repeat; /* Evita repetición de la imagen */
+                min-height: 100vh;
                 font-family: 'Arial', sans-serif;
                 margin: 0;
                 padding: 0;
@@ -16,9 +22,10 @@
             }
             .logo {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         margin: 20px 0;
+        width: 200px
     }
 
     .logo img {
@@ -42,6 +49,12 @@
                 text-align: center;
                 color: #333;
                 margin-bottom: 30px;
+            }
+            h1:hover{
+                text-align: center;
+                justify-content: space-between;
+                color: antiquewhite;
+                cursor: pointer;
             }
             .hero-section {
                 display: flex;
@@ -145,7 +158,7 @@
                             Dashboard
                         </a>
                     @else
-                        <a
+                        <a 
                             href="{{ route('login') }}"
                             class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal"
                         >
@@ -167,8 +180,10 @@
         <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
             <div class="container">
                 <div class="logo">
-                    <img src="{{ asset('images/Logomimbre.jpg') }}" 
+                    <img src="{{ asset('images/Mimbre.jpg') }}" 
                 alt="Logomimbre">
+
+                <h1 class="titulo">Novedades Mimbre</h1>
                 </div>
                 <!-- Sección de bienvenida -->
                 <section class="hero-section">
