@@ -2,13 +2,36 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
     <head>
         @include('partials.head')
+        <style>
+            .logo {
+        width: 128px; /* Ancho */
+        height: 128px; /* Alto */
+        border-radius: 50%; /* Borde circular */
+        object-fit: cover; /* Ajusta la imagen sin deformarla */
+    }
+
+    /* Estilo para el logo */
+    .logo img {
+        width: 160px; /* Tamaño del logo */
+        height: 160px;
+        border-radius: 50%; /* Redondea completamente el logo */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        background-color: #fddc7e; /* Color similar al fondo */
+        transition: transform 0.3s ease; /* Animación suave */
+    }
+
+    /* Efecto hover para el logo */
+    .logo img:hover {
+        transform: scale(1.1); /* Aumenta ligeramente al pasar el mouse */
+    }
+        </style>
     </head>
     <body class="min-h-screen bg-white dark:bg-zinc-800">
         <flux:sidebar sticky stashable class="border-r border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
             <flux:sidebar.toggle class="lg:hidden" icon="x-mark" />
 
             <a href="{{ route('dashboard') }}" class="me-5 flex items-center space-x-2 rtl:space-x-reverse" wire:navigate>
-                <x-app-logo />
+                <img class="logo" src="images/logo2.png" alt="">
             </a>
 
             <flux:navlist variant="outline">

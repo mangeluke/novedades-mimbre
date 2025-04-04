@@ -36,19 +36,59 @@ new #[Layout('components.layouts.auth')] class extends Component {
 }; ?>
 
 <div class="flex flex-col gap-6">
-    <x-auth-header :title="__('Crea Tu Cuenta')" :description="__('Enter your details below to create your account')" />
+    <h1 class="text-white text-center text-2xl font-bold">{{ __('Registrese Aqui') }}</h1>
 
+    <p class="text-white text-center text-2xl font-bold">Ingrese sus datos a continuación para crear su cuenta</p>
     <!-- Session Status -->
     <x-auth-session-status class="text-center" :status="session('status')" />
     <style>
         body{
-            background-image: url('{{ asset('') }}');
+            background-image: url('{{ asset('images/logo4.jpg') }}');
                 background-size: cover; /* Ajusta la imagen al tamaño completo */
                 background-position: center; /* Centra la imagen */
                 background-repeat: no-repeat; /* Evita repetición de la imagen */
                 min-height: 100vh;
         }
+        .form-container {
+        background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco con transparencia */
+        padding: 30px; /* Espaciado interno */
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+        max-width: 500px; /* Ancho máximo del formulario */
+        margin: 0 auto; /* Centrar horizontalmente */
+        margin-top: 50px; /* Espacio desde la parte superior */
+    }
+
+    /* Estilo para el texto dentro del formulario */
+    .form-container h1,
+    .form-container p {
+        color: #333; /* Texto oscuro para mejorar la legibilidad */
+    }
+    flux:input {
+        background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco con transparencia */
+        border: 1px solid #ddd; /* Borde ligero */
+        padding: 10px; /* Espaciado interno */
+        border-radius: 5px; /* Bordes redondeados */
+        color: #333; /* Texto oscuro */
+    }
+
+    /* Estilo para el botón de envío */
+    flux:button {
+        background-color: #007bff; /* Color azul para el botón */
+        color: white; /* Texto blanco */
+        font-weight: bold; /* Texto en negrita */
+        border: none; /* Sin borde */
+        padding: 10px; /* Relleno interno */
+        border-radius: 5px; /* Bordes redondeados */
+        cursor: pointer; /* Cursor de puntero */
+    }
+
+    /* Hover para el botón */
+    flux:button:hover {
+        background-color: #0056b3; /* Cambio de color al pasar el cursor */
+    }
     </style>
+    <div class="form-container">
     <form wire:submit="register" class="flex flex-col gap-6">
         <!-- Name -->
         <flux:input
@@ -58,7 +98,9 @@ new #[Layout('components.layouts.auth')] class extends Component {
             required
             autofocus
             autocomplete="name"
-            :placeholder="__('Full name')"
+            :placeholder="__('nombre completo')"
+            
+
         />
 
         <!-- Email Address -->
@@ -88,7 +130,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
             type="password"
             required
             autocomplete="new-password"
-            :placeholder="__('Confirm password')"
+            :placeholder="__('Confirmar password')"
         />
 
         <div class="flex items-center justify-end">
@@ -99,9 +141,10 @@ new #[Layout('components.layouts.auth')] class extends Component {
     </form>
 
     <div class="space-x-1 rtl:space-x-reverse text-center text-sm text-zinc-600 dark:text-zinc-400">
-        {{ __('Already have an account?') }}
-        <flux:link :href="route('login')" wire:navigate>{{ __('Log in') }}</flux:link>
+        {{ __('¿Ya tienes una cuenta?') }}
+        <flux:link :href="route('login')" wire:navigate>{{ __('Inicia Sesion') }}</flux:link>
         <flux:link :href="route('home')" wire:navigate>{{ __('Inicio') }}</flux:link>
 
+    </div>
     </div>
 </div>

@@ -21,25 +21,43 @@
                 background-color: #f4f4f9;
             }
             .logo {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 20px 0;
-        width: 200px
+        display: flex; /* Usa Flexbox para alinear los elementos */
+        align-items: center; /* Alinea verticalmente */
+        justify-content: flex-start; /* Alinea el contenido hacia la izquierda */
+        gap: 20px; /* Espacio entre el logo, el espaciador y el título */
+        margin-top: 50px; /* Espacio desde la parte superior */
     }
 
+    /* Estilo para el logo */
     .logo img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 160px; /* Tamaño del logo */
+        height: 160px;
+        border-radius: 50%; /* Redondea completamente el logo */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        background-color: #fddc7e; /* Color similar al fondo */
+        transition: transform 0.3s ease; /* Animación suave */
     }
 
+    /* Efecto hover para el logo */
     .logo img:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        transform: scale(1.1); /* Aumenta ligeramente al pasar el mouse */
     }
+
+    /* Espaciador */
+    .spacer {
+        flex-grow: 1; /* Permite que el espaciador ocupe el espacio restante */
+    }
+
+    /* Estilo para el título */
+    .titulo {
+        font-size: 2.5rem; /* Tamaño grande */
+        font-weight: bold; /* Negrita */
+        color: #333; /* Color del texto */
+        text-align: center; /* Centra el texto */
+        margin: 0; /* Elimina márgenes predeterminados */
+        margin-left: 180px
+    }
+
             .container {
                 max-width: 1200px;
                 margin: 0 auto;
@@ -180,8 +198,8 @@
         <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
             <div class="container">
                 <div class="logo">
-                    <img src="{{ asset('images/Mimbre.jpg') }}" 
-                alt="Logomimbre">
+                    <img src="{{ asset('images/logo2.png') }}" 
+                alt="Logomimbre" >
 
                 <h1 class="titulo">Novedades Mimbre</h1>
                 </div>
