@@ -142,4 +142,23 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </div>
+
+    <script>
+        const toggleFiltersButton = document.getElementById('toggle-filters');
+    const filterOptions = document.querySelector('.filter-options');
+
+    // Agregar un evento al botón
+    toggleFiltersButton.addEventListener('click', () => {
+        // Alternar entre las clases 'hidden' y 'visible'
+        if (filterOptions.classList.contains('hidden')) {
+            filterOptions.classList.remove('hidden');
+            filterOptions.classList.add('visible');
+            toggleFiltersButton.textContent = 'Ocultar Filtros'; // Cambiar texto del botón
+        } else {
+            filterOptions.classList.remove('visible');
+            filterOptions.classList.add('hidden');
+            toggleFiltersButton.textContent = 'Mostrar Filtros'; // Restaurar texto del botón
+        }
+    });
+    </script>
 </x-layouts.app>

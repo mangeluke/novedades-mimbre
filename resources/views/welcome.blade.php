@@ -65,7 +65,7 @@
             }
             h2 {
                 text-align: center;
-                color: #333;
+                color: white;
                 margin-bottom: 30px;
             }
             h1:hover{
@@ -73,6 +73,12 @@
                 justify-content: space-between;
                 color: antiquewhite;
                 cursor: pointer;
+            }
+            h1{
+                text-align: center;
+                justify-content: space-between;
+                color: #333;
+                margin-bottom: 30px;
             }
             .hero-section {
                 display: flex;
@@ -90,16 +96,36 @@
                 font-size: 36px;
                 color: #333;
                 margin-bottom: 20px;
+                
             }
             .hero-section p {
                 font-size: 18px;
                 color: #666;
                 line-height: 1.6;
+                margin-left: 100px
             }
-            .hero-section img {
-                max-width: 100%;
-                border-radius: 10px;
-            }
+            .image-container {
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        margin: 20px 0; /* Espacio alrededor del contenedor */
+        overflow: hidden; /* Asegura que la imagen no se desborde */
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    }
+
+    /* Estilo de la imagen */
+    .styled-image {
+        max-width: 100%; /* Ajusta el ancho máximo para ser responsivo */
+        height: auto; /* Mantener la proporción */
+        border-radius: 10px; /* Bordes redondeados */
+        transition: transform 0.3s ease; /* Animación suave */
+    }
+
+    /* Efecto hover para la imagen */
+    .styled-image:hover {
+        transform: scale(1.05); /* Amplía ligeramente al pasar el mouse */
+    }
             @media (max-width: 768px) {
                 .hero-section {
                     flex-direction: column;
@@ -153,6 +179,180 @@
         color: #666;
         line-height: 1.6;
     }
+
+    
+    /* Estilo base para ambos botones */
+    .auth-link {
+        display: inline-block;
+        padding: 0.75rem 1.5rem; /* Espaciado interno */
+        font-size: 0.875rem; /* Tamaño del texto */
+        font-weight: bold; /* Texto en negrita */
+        text-decoration: none; /* Sin subrayado */
+        text-align: center;
+        border-radius: 0.375rem; /* Bordes redondeados */
+        transition: all 0.3s ease; /* Transición suave */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    }
+
+    /* Estilo específico para "Log in" */
+    .auth-link.login {
+        background-color: #1b1b18; /* Fondo oscuro */
+        color: #ffffff; /* Texto blanco */
+        border: 1px solid #1b1b18; /* Borde oscuro */
+    }
+
+    .auth-link.login:hover {
+        background-color: transparent; /* Fondo transparente al pasar el mouse */
+        color: #1b1b18; /* Texto oscuro */
+        border-color: #1b1b18; /* Borde oscuro */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    }
+
+    /* Estilo específico para "Register" */
+    .auth-link.register {
+        background-color: transparent; /* Fondo transparente */
+        color: #1b1b18; /* Texto oscuro */
+        border: 1px solid #1b1b18; /* Borde oscuro */
+    }
+
+    .auth-link.register:hover {
+        background-color: #1b1b18; /* Fondo oscuro al pasar el mouse */
+        color: #ffffff; /* Texto blanco */
+        border-color: #1b1b18; /* Borde oscuro */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    }
+
+    /* Modo oscuro */
+    @media (prefers-color-scheme: dark) {
+        .auth-link.login {
+            background-color: #EDEDEC; /* Fondo claro en modo oscuro */
+            color: #1b1b18; /* Texto oscuro */
+            border-color: #EDEDEC; /* Borde claro */
+        }
+
+        .auth-link.login:hover {
+            background-color: transparent; /* Fondo transparente */
+            color: #EDEDEC; /* Texto claro */
+            border-color: #EDEDEC; /* Borde claro */
+        }
+
+        .auth-link.register {
+            background-color: transparent; /* Fondo transparente */
+            color: #EDEDEC; /* Texto claro */
+            border-color: #EDEDEC; /* Borde claro */
+        }
+
+        .auth-link.register:hover {
+            background-color: #EDEDEC; /* Fondo claro al pasar el mouse */
+            color: #1b1b18; /* Texto oscuro */
+            border-color: #EDEDEC; /* Borde claro */
+        }
+    }
+
+    
+    /* Estilo general del footer */
+    .footer {
+        background-color: gray; /* Fondo oscuro */
+        color: #ffffff; /* Texto blanco */
+        font-family: Arial, sans-serif; /* Tipografía legible */
+        padding: 40px 20px; /* Espaciado interno */
+    }
+
+    /* Contenedor principal del footer */
+    .footer-container {
+        display: flex; /* Usa Flexbox para alinear las columnas */
+        justify-content: space-between; /* Espacio entre las columnas */
+        max-width: 1200px; /* Ancho máximo */
+        margin: 0 auto; /* Centrado horizontal */
+        gap: 20px; /* Espacio entre las columnas */
+    }
+
+    /* Columnas del footer */
+    .footer-column {
+        flex: 1; /* Cada columna ocupa el mismo espacio */
+        min-width: 200px; /* Ancho mínimo para evitar que se rompa en pantallas pequeñas */
+    }
+
+    /* Títulos de las columnas */
+    .footer-column h3 {
+        font-size: 1.2rem; /* Tamaño del título */
+        font-weight: bold; /* Negrita */
+        margin-bottom: 15px; /* Espacio debajo del título */
+        color: antiquewhite; /* Color dorado para destacar */
+    }
+
+    /* Párrafos */
+    .footer-column p {
+        font-size: 0.9rem; /* Tamaño del texto */
+        line-height: 1.6; /* Espaciado entre líneas */
+        color: #d1d1d1; /* Texto gris claro */
+    }
+
+    /* Lista de contacto */
+    .contact-list {
+        list-style: none; /* Sin viñetas */
+        padding: 0; /* Sin relleno */
+        margin: 0; /* Sin margen */
+    }
+
+    .contact-list li {
+        display: flex; /* Alineación de íconos y texto */
+        align-items: center; /* Alineación vertical */
+        margin-bottom: 10px; /* Espacio entre elementos */
+        font-size: 0.9rem; /* Tamaño del texto */
+        color: #d1d1d1; /* Texto gris claro */
+    }
+
+    .contact-list li i {
+        margin-right: 10px; /* Espacio entre el ícono y el texto */
+        color: #fddc7e; /* Color dorado para los íconos */
+    }
+
+    /* Íconos de redes sociales */
+    .social-icons {
+        list-style: none; /* Sin viñetas */
+        padding: 0; /* Sin relleno */
+        margin: 0; /* Sin margen */
+        display: flex; /* Alineación horizontal */
+        gap: 15px; /* Espacio entre íconos */
+    }
+
+    .social-icons li a {
+        display: inline-block;
+        font-size: 1.2rem; /* Tamaño de los íconos */
+        color: #ffffff; /* Color blanco */
+        transition: transform 0.3s ease, color 0.3s ease; /* Animación suave */
+    }
+
+    .social-icons li a:hover {
+        color: #fddc7e; /* Cambia el color al pasar el mouse */
+        transform: scale(1.2); /* Aumenta el tamaño del ícono */
+    }
+
+    /* Pie de página inferior */
+    .footer-bottom {
+        margin-top: 30px; /* Espacio desde el contenido superior */
+        text-align: center; /* Centra el texto */
+        font-size: 0.8rem; /* Tamaño del texto */
+        color: #d1d1d1; /* Texto gris claro */
+    }
+
+    /* Modo oscuro (opcional) */
+    @media (prefers-color-scheme: dark) {
+        .footer {
+            background-color: #000000; /* Fondo más oscuro */
+        }
+
+        .footer-column h3 {
+            color: #fddc7e; /* Mantén el color dorado */
+        }
+
+        .footer-bottom {
+            color: #a1a1a1; /* Texto más claro */
+        }
+    }
+    
+    
 </style>
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -165,7 +365,7 @@
         </style>
     </head>
     <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
-        <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
+        <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden" style="margin-top: 10px;">
             @if (Route::has('login'))
                 <nav class="flex items-center justify-end gap-4">
                     @auth
@@ -177,6 +377,7 @@
                         </a>
                     @else
                         <a 
+                        class="auth-link login"
                             href="{{ route('login') }}"
                             class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal"
                         >
@@ -185,6 +386,7 @@
 
                         @if (Route::has('register'))
                             <a
+                            class="auth-link register"
                                 href="{{ route('register') }}"
                                 class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
                                 Register
@@ -197,11 +399,12 @@
         
         <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
             <div class="container">
+                
                 <div class="logo">
                     <img src="{{ asset('images/logo2.png') }}" 
                 alt="Logomimbre" >
 
-                <h1 class="titulo">Novedades Mimbre</h1>
+                <h1 class="titulo">Novedades del Mimbre</h1>
                 </div>
                 <!-- Sección de bienvenida -->
                 <section class="hero-section">
@@ -210,11 +413,17 @@
                         <p>
                             En Canastas de Mimbre Elegantes, nos especializamos en la creación de hermosas y duraderas canastas de mimbre.
                             Con más de 20 años de experiencia, combinamos la tradición artesanal con un diseño moderno para ofrecer productos únicos y de alta calidad.
-                        </p>                        <!-- Componente Livewire para mostrar información del cliente -->
+                        </p>
+                        <br>
+                        <p>
+                            Si quiere saber más sobre nosotros y de los productos que ofrecemos, haga clic en el botón de inicio de sesion si ya tiene una cuenta, o en el botón de registro si es nuevo en nuestra pagina.
+                        </p>                      
                         @livewire('cliente-info')
                     </div>
-                    <img src="{{ asset('images/imagen1.jpeg') }}" alt="Bienvenida">
+                    <div class="image-container">
+                        <img src="{{ asset('images/logo4.jpg') }}" alt="Bienvenida">
 
+                    </div>
                     
                 </section>
                 
@@ -224,23 +433,62 @@
                     <h2>Nuestros Servicios</h2>
                     <div class="feature-grid">
                         <div class="feature-item">
-                            <img style="width: 200px;" src="{{ asset('images/imagen2.jpg') }}" alt="Servicio 1">
+                            <img style="width: 200px;" src="{{ asset('images/imagen1.jpg') }}" alt="Servicio 1">
                             <h3>Servicio 1</h3>
                             <p>Descripción del servicio 1.</p>
                         </div>
                         <div class="feature-item">
-                            <img src="{{ asset('images/imagen3.jpeg') }}" alt="Servicio 2">
+                            <img src="{{ asset('images/imagen2.jpg') }}" alt="Servicio 2">
                             <h3>Servicio 2</h3>
                             <p>Descripción del servicio 2.</p>
                         </div>
                         <div class="feature-item">
-                            <img style="width: 200px;" src="{{ asset('images/imagen4.jpg') }}" alt="Servicio 3">
+                            <img style="width: 200px;" src="{{ asset('images/imagen3.jpg') }}" alt="Servicio 3">
                             <h3>Servicio 3</h3>
                             <p>Descripción del servicio 3.</p>
                         </div>
+                        <div class="feature-item">
+                            <img style="width: 200px;" src="{{ asset('images/imagen4.jpg') }}" alt="Servicio 3">
+                            <h3>Servicio 4</h3>
+                            <p>Descripción del servicio 4.</p>
+                        </div>
+                        <div class="feature-item">
+                            <img style="width: 200px;" src="{{ asset('images/imagen5.jpg') }}" alt="Servicio 3">
+                            <h3>Servicio 5</h3>
+                            <p>Descripción del servicio 5.</p>
+                        </div>
                     </div>
+                    
                 </section>
 
+                <footer class="footer">
+                    <div class="footer-container">
+                        <div class="footer-column">
+                            <h3>Sobre Nosotros</h3>
+                            <p>
+                                Somos una empresa dedicada a la venta de canastas de mimbre hechas a mano, ofreciendo calidad y estética.
+                            </p>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Contacto</h3>
+                            <ul>
+                                <li><i class="fa-solid fa-phone"></i> +57 123 456 7890</li>
+                                <li><i class="fa-solid fa-envelope"></i> info@novedadesdelmimbre.com</li>
+                                <li><i class="fa-solid fa-map-marker"></i> Calle 123, Ibagué, Colombia</li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Síguenos</h3>
+                            <ul class="social-icons">
+                                <li><a href="https://www.facebook.com/novedadesdelmimbre"><i class="fa-brands fa-facebook">Facebook</i></a></li>
+                                <li><a href="https://chat.whatsapp.com/Hh7l9P9mbWFAeuIWjP4wvt"><i class="fa-brands fa-twitter">WhatsApp</i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2024 Novedades del Mimbre. Todos los derechos reservados.</p>
+                    </div>
+                </footer>
                 
             </div>
         </div>

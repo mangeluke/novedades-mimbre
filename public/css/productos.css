@@ -114,6 +114,36 @@ body {
     }
 }
 
+.hidden {
+    display: none;
+}
+
+/* Estilo para mostrar las sugerencias */
+#suggestions {
+    list-style: none; /* Sin viñetas */
+    padding: 0; /* Sin relleno */
+    margin: 5px 0 0 0; /* Espacio superior */
+    border: 1px solid #ccc; /* Borde ligero */
+    border-radius: 5px; /* Bordes redondeados */
+    max-height: 150px; /* Altura máxima */
+    overflow-y: auto; /* Barra de desplazamiento si hay muchas opciones */
+    background-color: white; /* Fondo blanco */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Estilo para cada opción de sugerencia */
+#suggestions li {
+    padding: 8px 12px; /* Espaciado interno */
+    cursor: pointer; /* Cursor de puntero */
+    font-size: 0.9rem; /* Tamaño del texto */
+    transition: background-color 0.3s ease; /* Animación suave */
+}
+
+/* Efecto hover para las opciones */
+#suggestions li:hover {
+    background-color: #f0f0f0; /* Cambio de color al pasar el mouse */
+}
+
 
 .menu-header {
     display: flex;
@@ -384,4 +414,8 @@ body {
 .agregar-carrito:hover {
     background: #0056b3;
     transform: scale(1.05);
+}
+
+.prueba{
+    display: flex;
 }

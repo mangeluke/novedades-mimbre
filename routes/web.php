@@ -21,6 +21,9 @@ Route::view('contacto', 'contacto')
     ->middleware(['auth', 'verified'])
     ->name('contacto');
 
+    Route::view('blog', 'blog')
+    ->middleware(['auth', 'verified'])
+    ->name('blog');
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
 

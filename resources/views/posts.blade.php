@@ -24,6 +24,8 @@
                     <div class="search-box-wrapper">
                         <input type="text" id="search-box" placeholder="Buscar productos..." />
                         <i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i>
+                        <!-- Contenedor para mostrar sugerencias -->
+                        <ul id="suggestions" class="hidden"></ul>
                     </div>
                     <div class="filter-options hidden">
                         <label for="category">Categoría:</label>
@@ -45,7 +47,8 @@
                     <div class="container-produts">
                         <div class="card-product">
                             <div class="container-img">
-                                <img src="{{ asset('images/imagen1.jpeg') }}" alt="Canasta de Mimbre" />
+                                
+                                <img src="{{ asset('images/imagen1.jpg') }}" alt="Canasta de Mimbre" />
                                 <span class="discond">-13%</span>
                             </div>
                             <div class="content-card-product">
@@ -57,7 +60,7 @@
                         <!-- Repite para otros productos -->
                         <div class="card-product">
                             <div class="container-img">
-                                <img src="{{ asset('images/imagen1.jpeg') }}" alt="Canasta de Mimbre" />
+                                <img src="{{ asset('images/imagen2.jpg') }}" alt="Canasta de Mimbre" />
                                 <span class="discond">-13%</span>
                             </div>
                             <div class="content-card-product">
@@ -69,7 +72,7 @@
 
                         <div class="card-product">
                             <div class="container-img">
-                                <img src="{{ asset('images/imagen1.jpeg') }}" alt="Canasta de Mimbre" />
+                                <img src="{{ asset('images/imagen3.jpg') }}" alt="Canasta de Mimbre" />
                                 <span class="discond">-13%</span>
                             </div>
                             <div class="content-card-product">
@@ -81,7 +84,7 @@
 
                         <div class="card-product">
                             <div class="container-img">
-                                <img src="{{ asset('images/imagen1.jpeg') }}" alt="Canasta de Mimbre" />
+                                <img src="{{ asset('images/imagen4.jpg') }}" alt="Canasta de Mimbre" />
                                 <span class="discond">-13%</span>
                             </div>
                             <div class="content-card-product">
@@ -107,7 +110,7 @@
                             <a href="#" class="agregar-carrito btn-3" data-id="1">Agregar al Carrito</a>
                         </div>
                         <div class="categorie-img">
-                            <img src="{{ asset('images/imagen4.jpg') }}" alt="Promo 1" />
+                            <img src="{{ asset('images/imagen5.jpg') }}" alt="Promo 1" />
                         </div>
                     </div>
                     <div class="categorie">
@@ -120,7 +123,7 @@
                             <a href="#" class="agregar-carrito btn-3" data-id="2">Agregar al Carrito</a>
                         </div>
                         <div class="categorie-img">
-                            <img src="{{ asset('images/imagen5.jpeg') }}" alt="Promo 2" />
+                            <img src="{{ asset('images/imagen6.jpg') }}" alt="Promo 2" />
                         </div>
                     </div>
                     <div class="categorie">
@@ -133,7 +136,7 @@
                             <a href="#" class="agregar-carrito btn-3" data-id="3">Agregar al Carrito</a>
                         </div>
                         <div class="categorie-img">
-                            <img src="{{ asset('images/imagen6.jpg') }}" alt="Promo 3" />
+                            <img src="{{ asset('images/imagen.jpg') }}" alt="Promo 3" />
                         </div>
                     </div>
                     <div class="categorie">
@@ -146,7 +149,40 @@
                             <a href="#" class="agregar-carrito btn-3" data-id="4">Agregar al Carrito</a>
                         </div>
                         <div class="categorie-img">
+                            <img src="{{ asset('images/imagen.jpg') }}" alt="Promo 4" />
+                        </div>
+                    </div>
+
+                    
+                    <div class="categorie">
+                        <div class="row">
+                          <div class="col-sm">
+                            <img src="{{ asset('images/imagen1.jpg') }}" alt="Promo 4" />
+                            <h3>Promo 4</h3>
+                            <div class="prices">
+                                <p class="price-1">$199</p>
+                                <p class="precio">$159</p>
+                            </div>
+                            <a href="#" class="agregar-carrito btn-3" data-id="4">Agregar al Carrito</a>
+                          </div>
+                          <div class="col-sm">
                             <img src="{{ asset('images/imagen2.jpg') }}" alt="Promo 4" />
+                            <h3>Promo 4</h3>
+                            <div class="prices">
+                                <p class="price-1">$199</p>
+                                <p class="precio">$159</p>
+                            </div>
+                            <a href="#" class="agregar-carrito btn-3" data-id="4">Agregar al Carrito</a>
+                          </div>
+                          <div class="col-sm">
+                            <img src="{{ asset('images/imagen3.jpg') }}" alt="Promo 4" />
+                            <h3>Promo 4</h3>
+                            <div class="prices">
+                                <p class="price-1">$199</p>
+                                <p class="precio">$159</p>
+                            </div>
+                            <a href="#" class="agregar-carrito btn-3" data-id="4">Agregar al Carrito</a>
+                          </div>
                         </div>
                     </div>
                 </div>
@@ -155,4 +191,61 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </div>
+    <script>
+        // Lista de productos o categorías predefinidas
+        const products = [
+            "Canasta chica",
+            "Canasta mediana",
+            "Canasta grande",
+            "Mimbre decorativo",
+            "Cestas personalizadas",
+            "Accesorios de mimbre"
+        ];
+    
+        // Obtener referencias a los elementos
+        const searchBox = document.getElementById('search-box');
+        const suggestionsList = document.getElementById('suggestions');
+    
+        // Función para filtrar las opciones
+        function filterSuggestions(query) {
+            // Filtrar productos que coincidan con el texto ingresado
+            return products.filter(product =>
+                product.toLowerCase().includes(query.toLowerCase())
+            );
+        }
+    
+        // Función para actualizar las sugerencias
+        function updateSuggestions() {
+            const query = searchBox.value.trim(); // Obtener el texto ingresado
+            suggestionsList.innerHTML = ''; // Limpiar las sugerencias anteriores
+    
+            if (query.length > 0) {
+                const filteredProducts = filterSuggestions(query); // Filtrar productos
+    
+                if (filteredProducts.length > 0) {
+                    // Mostrar las sugerencias
+                    filteredProducts.forEach(product => {
+                        const li = document.createElement('li');
+                        li.textContent = product;
+                        li.addEventListener('click', () => {
+                            searchBox.value = product; // Rellenar el campo de búsqueda
+                            suggestionsList.classList.add('hidden'); // Ocultar las sugerencias
+                        });
+                        suggestionsList.appendChild(li);
+                    });
+                    suggestionsList.classList.remove('hidden'); // Mostrar el contenedor
+                } else {
+                    suggestionsList.classList.add('hidden'); // Ocultar si no hay coincidencias
+                }
+            } else {
+                suggestionsList.classList.add('hidden'); // Ocultar si el campo está vacío
+            }
+        }
+    
+        // Agregar eventos al campo de búsqueda
+        searchBox.addEventListener('input', updateSuggestions); // Actualizar al escribir
+        searchBox.addEventListener('blur', () => {
+            setTimeout(() => suggestionsList.classList.add('hidden'), 200); // Ocultar al perder foco
+        });
+    </script>
 </x-layouts.app>

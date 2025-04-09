@@ -37,8 +37,9 @@
             <flux:navlist variant="outline">
                 <flux:navlist.group :heading="__('Platform')" class="grid">
                     <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Inicio') }}</flux:navlist.item>
-                    <flux:navlist.item icon="shopping-cart" :href="route('posts')" :current="request()->routeIs('posts')" wire:navigate>{{ __('Post') }}</flux:navlist.item>
-                    <flux:navlist.item icon="shopping-cart" :href="route('contacto')" :current="request()->routeIs('contacto')" wire:navigate>{{ __('Contacto') }}</flux:navlist.item>
+                    <flux:navlist.item icon="shopping-cart" :href="route('posts')" :current="request()->routeIs('posts')" wire:navigate>{{ __('Productos') }}</flux:navlist.item>
+                    <flux:navlist.item icon="envelope" :href="route('contacto')" :current="request()->routeIs('contacto')" wire:navigate>{{ __('Contacto') }}</flux:navlist.item>
+                    <flux:navlist.item icon="book-open-text" :href="route('blog')" :current="request()->routeIs('blog')" wire:navigate>{{ __('Blog') }}</flux:navlist.item>
 
                 </flux:navlist.group>
             </flux:navlist>
