@@ -14,7 +14,7 @@
         <main>
             <!-- Sección de Descripción -->
             <section class="descripcion-productos">
-                <h2 class="titulo-descripcion">Puede contactarse por acá</h2>
+                <h2 class="titulo-descripcion">Contactarse por aqui</h2>
                 <p class="texto-descripcion">
                     En Novedades del Mimbre, nos dedicamos a la fabricación y venta de productos de mimbre de la mejor calidad.
                 </p>
