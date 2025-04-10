@@ -27,14 +27,37 @@
                 <hr />
                 <div class="contenido">
                     <p>
-                        En Canastas de Mimbre Elegantes, nos especializamos en la creación de hermosas y duraderas canastas de mimbre.
-                        Con más de 20 años de experiencia, combinamos la tradición artesanal con un diseño moderno para ofrecer productos únicos y de alta calidad.
+                        En Novedades del Mimbre llevamos más de 30 años dedicados al arte de transformar lo natural en piezas únicas y llenas de vida. Somos una empresa familiar especializada en la creación y venta de canastas de mimbre hechas a mano, elaboradas con amor, paciencia y dedicación.
+
                     </p>
                 </div>
-                <div class="button-container">
-                    <a class="info-btn" href="/pages/nosotros.html">Más información</a>
-                </div>
+                
             </div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Mas informacion
+              </button>
+            <!-- Scrollable modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Novedades del mimbre</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>
+                        Cada una de nuestras canastas refleja la experiencia y el cuidado de tres décadas de trabajo artesanal, donde la tradición y la calidad van de la mano. Nos enorgullece mantener vivo este oficio que ha pasado de generación en generación, aportando belleza y funcionalidad a los hogares.
+                        Creemos firmemente en el uso del mimbre como un material sostenible, ecológico y hermoso. Por eso, ofrecemos productos únicos, resistentes y versátiles: desde canastas para picnic, decoración y organización, hasta detalles especiales para regalar.
+                        En Novedades del Mimbre, honramos el pasado con la mirada puesta en el futuro, brindando siempre lo mejor a cada cliente.
+                      </p>
+                      
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </section>
 
         <!-- SECCIÓN CARRUSEL -->
@@ -73,12 +96,13 @@
                     <div class="payment-item">
                         <img class="img-seguri" src="{{ asset('images/nequi.png') }}" alt="" />
                         <h3>Paga con Nequi o en efectivo</h3>
-                        <p>Con Mercado Pago, paga en cuotas y aprovecha la comodidad de financiación.</p>
+                        <p>Con Daviplata, y aprovecha la comodidad de financiación.</p>
                     </div>
                     <div class="payment-item">
                         <i class="fa-solid fa-route" style="color: #003185;"></i>
-                        <h3>Envío gratis desde $60.000</h3>
-                        <p>Con solo estar registrado, tienes envíos gratis en miles de productos.</p>
+                        <h3>Envíos</h3>
+                        <p>El precio del envió se fijará con el asesor, teniendo en cuenta la cantidad y transportadora usada, los clientes regulares tienen un descuento especial
+                        </p>
                     </div>
                     <div class="payment-item">
                         <i class="fa-solid fa-shield" style="color: #010057;"></i>
@@ -125,10 +149,8 @@
                 <div class="footer-column">
                     <h3>Síguenos</h3>
                     <ul class="social-icons">
-                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+                        <li><a href="https://www.facebook.com/novedadesdelmimbre"><i class="fa-brands fa-facebook">Facebook</i></a></li>
+                        <li><a href="https://chat.whatsapp.com/Hh7l9P9mbWFAeuIWjP4wvt"><i class="fa-brands fa-twitter">WhatsApp</i></a></li>
                     </ul>
                 </div>
             </div>

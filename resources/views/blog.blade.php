@@ -23,7 +23,7 @@
             <div class="container">
                 <div class="row">
                   <div class="col-sm">
-                    <img src="images/imagen1.jpg" alt="" srcset="">
+                    <img src="images/imagen8.jpg" alt="" srcset="">
                     <p>Canasta mimbre</p>
                   </div>
                   <div class="col-sm">
