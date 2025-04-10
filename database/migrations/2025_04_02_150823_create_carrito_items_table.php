@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('carrito_items', function (Blueprint $table) {
             $table->integer('id_carrito_item', true);
-            $table->integer('id_carrito')->nullable()->index('id_carrito');
+            $table->foreign('id_carrito')->references('id')->on('id_carrito');
             $table->integer('id_producto')->nullable()->index('id_producto');
             $table->integer('cantidad')->nullable();
             $table->decimal('precio', 10)->nullable();
