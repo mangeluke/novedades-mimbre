@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('carrito', function (Blueprint $table) {
-            $table->integer('id_carrito', true);
-            $table->integer('id_cliente')->nullable()->index('id_cliente');
-            $table->timestamp('fecha_creacion')->useCurrent();
+            $table->integer('id_carrito', true); // Clave primaria autoincremental
+            $table->integer('id_cliente')->nullable(); // ID del cliente
+            $table->timestamp('fecha_creacion')->useCurrent(); // Fecha de creación
         });
     }
 

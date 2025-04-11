@@ -12,11 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('carrito_items', function (Blueprint $table) {
-            $table->integer('id_carrito_item', true);
-            $table->foreign('id_carrito')->references('id')->on('id_carrito');
-            $table->integer('id_producto')->nullable()->index('id_producto');
-            $table->integer('cantidad')->nullable();
-            $table->decimal('precio', 10)->nullable();
+            $table->integer('id_carrito_item', true)-> primary(); // Clave primaria autoincremental
+            $table->foreign('id_carrito')->nullable(); // Clave foránea que referencia a `carrito`
+            $table->foreign('id_producto')->nullable(); // Clave foránea que referencia a `productos`
+            $table->integer('cantidad')->nullable(); // Cantidad del producto
+            $table->decimal('precio', 10, 2)->nullable(); // Precio del producto
+    
+            // Definir claves foráneas
+            $table->foreign('id_carrito')->references('id_carrito')->on('carrito')->onDelete('cascade');
+            $table->foreign('id_producto')->references('id')->on('productos')->onDelete('cascade');
         });
     }
 

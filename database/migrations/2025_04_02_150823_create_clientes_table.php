@@ -12,14 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('clientes', function (Blueprint $table) {
-            $table->integer('id', true);
-            $table->string('nombre', 100)->nullable();
-            $table->string('email', 100)->nullable()->unique('email');
-            $table->string('telefono', 20)->nullable();
-            $table->string('direccion')->nullable();
-            $table->timestamp('fecha_registro')->useCurrent();
-            $table->string('password');
-            $table->timestamps();
+            $table->integer('id_cliente', true); // Clave primaria autoincremental
+            $table->string('nombre', 255)->nullable(); // Nombre del cliente
+            $table->string('email', 255)->unique()->nullable(); // Email único del cliente
+            $table->string('password', 255)->nullable(); // Contraseña del cliente
+            $table->timestamps(); // Columnas created_at y updated_at
         });
     }
 

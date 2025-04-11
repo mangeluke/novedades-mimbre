@@ -22,6 +22,18 @@ body {
     margin-top: 1.5rem;
 }
 
+.card {
+    width: 100%;
+    height: 300px; /* Altura total de la tarjeta */
+    display: flex;
+    flex-direction: column;
+}
+
+
+.container-2{
+    background-color: antiquewhite;
+}
+
 .logo-header {
     display: flex;
     align-items: center;
@@ -163,6 +175,17 @@ body {
     color: #007bff;
 }
 
+
+
+.card{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 20px;
+}
 .cart-menu {
     position: relative;
 }
